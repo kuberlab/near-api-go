@@ -2,6 +2,8 @@ module github.com/eteu-technologies/near-api-go
 
 go 1.16
 
+replace github.com/eteu-technologies/near-api-go => github.com/kuberlab/near-api-go master
+
 require (
 	github.com/davecgh/go-spew v1.1.1
 	github.com/eteu-technologies/borsh-go v0.3.2
@@ -10,3 +12,4 @@ require (
 	github.com/mr-tron/base58 v1.2.0
 	github.com/urfave/cli/v2 v2.3.0
 )
+
