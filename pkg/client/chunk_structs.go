@@ -32,6 +32,6 @@ type ChunkHeaderView struct {
 	BalanceBurnt         types.Balance             `json:"balance_burnt"`
 	OutgoingReceiptsRoot hash.CryptoHash           `json:"outgoing_receipts_root"`
 	TxRoot               hash.CryptoHash           `json:"tx_root"`
-	ValidatorProposals   []ValidatorStakeView      `json:"validator_proposals"`
+	//ValidatorProposals   []ValidatorStakeView      `json:"validator_proposals"`
 	Signature            signature.Base58Signature `json:"signature"`
 }
