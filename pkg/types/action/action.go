@@ -103,7 +103,15 @@ func (a Action) String() string {
 func (a *Action) UnmarshalJSON(b []byte) error {
 	var obj map[string]json.RawMessage
 	if err := json.Unmarshal(b, &obj); err != nil {
-		return err
+		if string(b)[0] == '"' {
+			var objStr string
+			if err2 := json.Unmarshal(b, &objStr); err2 != nil {
+				return err2
+			}
+			obj = map[string]json.RawMessage{objStr: []byte("{}")}
+		} else {
+			return err
+		}
 	}
 
 	if l := len(obj); l > 1 {
