@@ -43,7 +43,7 @@ type BlockHeaderView struct {
 	Timestamp             uint64                       `json:"timestamp"`         // milliseconds
 	TimestampNanosec      types.TimeNanos              `json:"timestamp_nanosec"` // nanoseconds, uint128
 	RandomValue           hash.CryptoHash              `json:"random_value"`
-	ValidatorProposals    []ValidatorStakeView         `json:"validator_proposals"`
+	//ValidatorProposals    []ValidatorStakeView         `json:"validator_proposals"`
 	ChunkMask             []bool                       `json:"chunk_mask"`
 	GasPrice              types.Balance                `json:"gas_price"`
 	RentPaid              types.Balance                `json:"rent_paid"`        // NOTE: deprecated - 2021-05-14
