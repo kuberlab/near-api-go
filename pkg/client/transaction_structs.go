@@ -39,9 +39,9 @@ type FinalExecutionOutcomeWithReceiptView struct {
 }
 
 type ReceiptView struct {
-	PredecessorId types.AccountID `json:"predecessor_id"`
+	PredecessorID types.AccountID `json:"predecessor_id"`
 	ReceiverID    types.AccountID `json:"receiver_id"`
-	ReceiptID     hash.CryptoHash `jsom:"receipt_id"`
+	ReceiptID     hash.CryptoHash `json:"receipt_id"`
 	Receipt       json.RawMessage `json:"receipt"` // TODO: needs a type!
 }
 
