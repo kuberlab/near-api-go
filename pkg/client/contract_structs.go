@@ -16,6 +16,7 @@ type StateItem struct {
 type CallResult struct {
 	Result []byte   `json:"result"`
 	Logs   []string `json:"logs"`
+	Error  string   `json:"error"`
 
 	QueryResponse
 }
