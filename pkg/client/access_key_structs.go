@@ -79,8 +79,30 @@ type FunctionCallPermission struct {
 
 type AccessKeyView struct {
 	AccessKey
-
 	QueryResponse
+}
+
+func (a *AccessKeyView) UnmarshalJSON(data []byte) (err error) {
+	var qr QueryResponse
+	var ak AccessKey
+
+	if err = json.Unmarshal(data, &qr); err != nil {
+		err = fmt.Errorf("unable to parse QueryResponse: %w", err)
+		return
+	}
+
+	if qr.Error == nil {
+		if err = json.Unmarshal(data, &ak); err != nil {
+			err = fmt.Errorf("unable to parse AccessKey: %w", err)
+			return
+		}
+	}
+
+	*a = AccessKeyView{
+		AccessKey:     ak,
+		QueryResponse: qr,
+	}
+	return
 }
 
 type AccessKeyViewInfo struct {
